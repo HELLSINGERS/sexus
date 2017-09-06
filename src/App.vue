@@ -3,17 +3,36 @@
     <!--<img src="./assets/logo.png">-->
     <router-view></router-view>
     <footer id="footer">
-      <router-link to="/home">home</router-link>
-      <router-link to="/tool">tool</router-link>
-      <router-link to="/visithouse">visithouse</router-link>
-      <router-link to="/own">own</router-link>
+      <mt-tabbar v-model="selected">
+        <mt-tab-item id="tab1">
+          <img slot="icon" src="./assets/logo.png">
+          tab1
+        </mt-tab-item>
+        <mt-tab-item id="tab2">
+          <img slot="icon" src="./assets/logo.png">
+          tab2
+        </mt-tab-item>
+        <mt-tab-item id="tab3">
+          <img slot="icon" src="./assets/logo.png">
+          tab3
+        </mt-tab-item>
+        <mt-tab-item id="tab4">
+          <img slot="icon" src="./assets/logo.png">
+          tab4
+        </mt-tab-item>
+      </mt-tabbar>
     </footer>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'app'
+  name: 'app',
+  data () {
+    return {
+      selected: ''
+    }
+  }
 }
 </script>
 
@@ -42,6 +61,5 @@ export default {
 a{
   text-decoration: none;
   color: black;
-
 }
 </style>

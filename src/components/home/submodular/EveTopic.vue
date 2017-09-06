@@ -1,7 +1,5 @@
 <template>
-  <div id="app">
-    <section></section>
-  </div>
+
 </template>
 
 <script>
