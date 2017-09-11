@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <section></section>
+    <section>123465789</section>
   </div>
 </template>
 
@@ -9,5 +9,7 @@
 </script>
 
 <style>
-
+  /*div{*/
+    /*background-color: #fff;*/
+  /*}*/
 </style>

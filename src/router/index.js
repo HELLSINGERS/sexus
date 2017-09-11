@@ -13,10 +13,10 @@ export default new Router({
       path: '/',
       component: Home
     },
-    {
-      path: '/home',
-      component: Home
-    },
+    // {
+    //   path: '/home',
+    //   component: Home
+    // },
     {
       path: '/tool',
       component: Tool
