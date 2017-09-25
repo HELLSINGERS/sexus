@@ -23,7 +23,11 @@ import NewHouseMainImg from '../components/home/submodular/NavEights/NewHouseMai
 
 // 百科新闻详情页
 import BaiKeNewsMain from '../components/home/submodular/NavEights/BaiKeNewsMain.vue'
-
+import Login from '../components/common/login/Login.vue'
+// import NotFoundComponent from '../components/common/errorpage/NotFoundComponent.vue'
+import Register from '../components/our/Register.vue'
+import RegisterSubmit from '../components/our/RegisterSubmit.vue'
+Vue.use(Router)
 // 八大块主页面
 import SecondHandMain from '../components/home/submodular/NavEights/SecondHandMain.vue'
 import NewHouseMain from '../components/home/submodular/NavEights/NewHouseMain.vue'
@@ -31,11 +35,15 @@ import RentingMain from '../components/home/submodular/NavEights/RentingMain.vue
 import SeekStoreMain from '../components/home/submodular/NavEights/seekStore/SeekStoreMain.vue'
 Vue.use(Router)
 export default new Router({
+  // mode: 'history',
   routes: [
-    // 四大主页面
+    // {
+    //   path: '*',
+    //   component: NotFoundComponent
+    // },
     {
       path: '/',
-      component: Home
+      redirect: '/home'
     },
     {
       path: '/home',
@@ -126,6 +134,17 @@ export default new Router({
     {
       path: '/baikeNewsMain',
       component: BaiKeNewsMain
+    {
+      path: '/login',
+      component: Login
+    },
+    {
+      path: '/register',
+      component: Register
+    },
+    {
+      path: '/registerSubmit',
+      component: RegisterSubmit
     }
   ]
 })

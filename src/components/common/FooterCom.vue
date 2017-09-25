@@ -21,58 +21,40 @@
     </div>
   </div>
 </template>
+
 <script>
   export default {
-    name: 'app',
     data () {
       return {
         cc: false
       }
     },
     mounted () {
-      this.cc = true
-      this.getData()
+
     },
     methods: {
-      getData () {
-        var pathA = this.$route.path
-        console.log(this.$router)
-        console.log(this.$route)
-        console.log(pathA)
-//        if (pathA === '/home' || pathA === '/tool' || pathA === '/visithouse' || pathA === '/own') {
-//          this.cc = true
-//        } else {
-//          this.cc = false
-//        }
-      }
+
     }
   }
 </script>
+
 <style scoped>
   *{
     margin: 0;
     padding: 0;
   }
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  position: relative;
-}
   #footer{
-      width: 100%;
-      height: 50px;
-      line-height: 30px;
-      display: flex;
-      flex-direction: row;
-      justify-content: space-around;
-      position: fixed;
-      left: 0;
-      bottom: 0;
-      background-color: white;
-    }
+    width: 100%;
+    height: 50px;
+    line-height: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    background-color: white;
+  }
   #footer a{
     text-decoration: none;
     color: #ccc;
@@ -88,6 +70,6 @@
     margin: 0 auto;
   }
   /*#footer .active{*/
-    /*color: red;*/
+  /*color: red;*/
   /*}*/
 </style>
