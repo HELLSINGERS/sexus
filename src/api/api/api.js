@@ -1,6 +1,6 @@
  /* *
  * Created by wzk on 2017/8/3.
- */
+  */
 let serverUrl = 'http://www.fooju.cn/fjw/api.php?'
 export default {
   serverUrl: 'http://www.fooju.cn/',
