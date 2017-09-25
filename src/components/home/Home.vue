@@ -1,15 +1,20 @@
 <template>
   <div id="app">
-    <section>123465789</section>
+    <section>
+      <nav-eight></nav-eight>
+    </section>
   </div>
 </template>
 
 <script>
-
+  import NavEight from './submodular/NavEight'
+  export default{
+    components: {
+      navEight: NavEight
+    }
+  }
 </script>
 
 <style>
-  /*div{*/
-    /*background-color: #fff;*/
-  /*}*/
+
 </style>
