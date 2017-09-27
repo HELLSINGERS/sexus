@@ -4,6 +4,9 @@ import Router from 'vue-router'
 import Home from '../components/home/Home.vue'
 import Tool from '../components/tools/Tool.vue'
 import VisitHouse from '../components/visithouse/VisitHouse.vue'
+import Valuation from '../components/tools/Valuation.vue'
+import Findhouse from '../components/tools/Findhouse.vue'
+import HouseLoanCalculator from '../components/tools/HouseLoanCalculator.vue'
 import Own from '../components/our/Own.vue'
 import Login from '../components/common/login/Login.vue'
 // import NotFoundComponent from '../components/common/errorpage/NotFoundComponent.vue'
@@ -49,6 +52,18 @@ export default new Router({
     {
       path: '/registerSubmit',
       component: RegisterSubmit
+    },
+    {
+      path: '/Valuation',
+      component: Valuation
+    },
+    {
+      path: '/Findhouse',
+      component: Findhouse
+    },
+    {
+      path: '/HouseLoanCalculator',
+      component: HouseLoanCalculator
     }
   ]
 })

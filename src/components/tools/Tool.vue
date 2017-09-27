@@ -5,9 +5,9 @@
       </header>
       <section>
         <mt-swipe :auto="3000" @change="handleChange">
-          <mt-swipe-item><img src="./images/2a.jpg" alt="" height="230px" width="100%"></mt-swipe-item>
-          <mt-swipe-item><img src="./images/2a.jpg" alt="" height="230px" width="100%"></mt-swipe-item>
-          <mt-swipe-item><img src="./images/2a.jpg" alt="" height="230px" width="100%"></mt-swipe-item>
+          <mt-swipe-item><img src="./images/2a.jpg" alt=""></mt-swipe-item>
+          <mt-swipe-item><img src="./images/2a.jpg" alt=""></mt-swipe-item>
+          <mt-swipe-item><img src="./images/2a.jpg" alt=""></mt-swipe-item>
         </mt-swipe>
         <ul class="icon-box">
           <li>
@@ -17,7 +17,7 @@
             </a>
           </li>
           <li>
-            <a href="">
+            <a href="#HouseLoanCalculator">
               <div class="icon"><img src="./images/download-5.png" alt=""></div>
               <div>房贷计算器</div>
             </a>
@@ -37,13 +37,13 @@
             </a>
           </li>
           <li>
-            <a href="">
+            <a href="#Valuation">
               <div class="icon"><img src="./images/download-4.png" alt=""></div>
               <div>房屋估价</div>
             </a>
           </li>
           <li>
-            <a href="">
+            <a href="#Findhouse">
               <div class="icon"><img src="./images/download-1.png" alt=""></div>
               <div>帮我找房</div>
             </a>
@@ -55,9 +55,6 @@
 
 <script>
   export default {
-    data () {
-
-    },
     methods: {
       handleChange (index) {
 
@@ -80,13 +77,16 @@
     font-size: 18px;
   }
   .icon-box {
+    padding-top: 15px;
+    width: 100%;
     display: flex;
     list-style: none;
-    padding: 10px;
   }
   .icon-box li{
     flex: 1;
-    padding: 5px;
+    text-align: center;
+    width: 110px;
+    height: 110px;
   }
   .icon-box a{
     border: 1px solid rgb(240,240,240);
@@ -106,6 +106,9 @@
     margin: 12px;
   }
   .mint-swipe {
-    height: 230px;
+    height: 250px;
+  }
+  .mint-swipe img{
+
   }
 </style>
