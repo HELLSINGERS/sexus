@@ -1,6 +1,6 @@
 <template>
     <div>
-      <header>
+      <header id="tool">
         <span>福居工具</span>
       </header>
       <section>
@@ -11,7 +11,7 @@
         </mt-swipe>
         <ul class="icon-box">
           <li>
-            <a href="">
+            <a href="#ToolBroker">
               <div class="icon"><img src="./images/download-3.png" alt=""></div>
               <div>经纪人</div>
             </a>
@@ -23,7 +23,7 @@
             </a>
           </li>
           <li>
-            <a href="">
+            <a href="#TaxationCalculator">
               <div class="icon"><img src="./images/download.png" alt=""></div>
               <div>税费计算</div>
             </a>
@@ -31,7 +31,7 @@
         </ul>
         <ul class="icon-box">
           <li>
-            <a href="">
+            <a href="#ToolExamine">
               <div class="icon"><img src="./images/download-2.png" alt=""></div>
               <div>查门店</div>
             </a>
@@ -68,13 +68,13 @@
     margin: 0;
     padding: 0;
   }
-  header{
-    text-align: center;
-    padding: 10px;
+  #tool{
+    height: 40px;
+    display: flex;
+    justify-content: space-around;
   }
-  header span {
-    height: 50px;
-    font-size: 18px;
+  #tool span{
+    line-height: 40px;
   }
   .icon-box {
     padding-top: 15px;
@@ -109,6 +109,6 @@
     height: 250px;
   }
   .mint-swipe img{
-
+    height: 250px;
   }
 </style>

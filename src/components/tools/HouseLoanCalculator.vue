@@ -86,52 +86,135 @@
           </ul>
         </form>
         <mt-button id="bottom-btn" type="danger">开始计算</mt-button>
-        <p>税费计算器仅供参考计算，实际有银行评估</p>
+        <p>税费计算器仅供参考计算，实际由银行评估</p>
       </mt-tab-container-item>
       <mt-tab-container-item id="2">
+        <form action="">
+          <ul class="page-info">
+            <li>
+              <span>计算方式：</span>
+              <div class="wrap">
+                <span id="one" class="fill select" @click="appearone">
+                  {{way}}
+                </span>
+                <ul class="selected" v-show="tt">
+                  <!--<li ref="ddd" @click="fillway">面积、单价</li>-->
+                  <!--<li>按贷款总额</li>-->
+                  <li v-for="(item, index) in lis" ref="ways" @click="fillway(index)">
+                    {{item}}
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li v-show="!total">
+              <span>单价：</span>
+              <span class="fill"><input type="text" placeholder="请输入大于0的数字">元/平米</span>
+            </li>
+            <li v-show="!total">
+              <span>面积：</span>
 
+              <span class="fill"><input type="text" placeholder="请输入大于0的数字">平米</span>
+            </li>
+            <li v-show="!total">
+              <span>按揭成数</span>
+              <div class="wrap">
+              <span class="fill select" @click="appeartwo">{{part}}
+              </span>
+                <ul class="selected" v-show="yy">
+                  <li v-for="(item, index) in lis1" ref="parts" @click="fillpart(index)">
+                    {{item}}
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li v-show="total"><span>贷款总额：</span>
+              <span class="fill">
+                <input type="text" placeholder="请输入大于0的数字">万元</span>
+            </li>
+            <li>
+              <span>贷款年限：</span>
+              <div class="wrap">
+              <span class="fill select" @click="appearthr">{{time}}
+              </span>
+                <ul class="selected" v-show="uu">
+                  <li v-for="(item, index) in lis2" ref="time" @click="filltime(index)">
+                    {{item}}
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li>
+              <span>贷款利率：</span>
+              <span class="fill"><input  type="text">%</span>
+            </li>
+            <li>
+              <span>还款方式：</span>
+              <div class="wrap">
+              <span class="fill select" @click="appearfour">{{way2}}
+              </span>
+                <ul class="selected" v-show="ii">
+                  <li v-for="(item, index) in lis3" ref="ways2" @click="fillway2(index)">
+                    {{item}}
+                  </li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+        </form>
         <mt-button id="bottom-btn" type="danger">开始计算</mt-button>
-        <p>税费计算器仅供参考计算，实际有银行评估</p>
+        <p>税费计算器仅供参考计算，实际由银行评估</p>
       </mt-tab-container-item>
       <mt-tab-container-item id="3">
         <form action="">
-          <ul>
+          <ul class="page-info">
             <li>
               <span>商业性：</span>
-              <span><input type="text" placeholder="请输入大于0的数字">元</span>
+              <span class="fill"><input type="text" placeholder="请输入大于0的数字">元</span>
             </li>
             <li>
               <span>公积金：</span>
-              <span><input type="text" placeholder="请输入大于0的数字">平米</span>
+              <span class="fill"><input type="text" placeholder="请输入大于0的数字">元</span>
             </li>
             <li>
-            <span>贷款年限：</span>
-            <span>
-                <ul></ul>
+              <span>贷款年限：</span>
+              <div class="wrap">
+              <span class="fill select" @click="appearthr">{{time}}
               </span>
+                <ul class="selected" v-show="uu">
+                  <li v-for="(item, index) in lis2" ref="time" @click="filltime(index)">
+                    {{item}}
+                  </li>
+                </ul>
+              </div>
           </li>
             <li>
               <span>商业</span>
-              <span>
+              <span class="fill">
                 <input type="text">%
               </span>
             </li>
             <li>
               <span>公积金：</span>
-              <span>
+              <span class="fill">
                 <input type="text">%
               </span>
             </li>
             <li>
               <span>还款方式：</span>
-              <span>
-                <ul></ul>
+              <div class="wrap">
+              <span class="fill select" @click="appearfour">{{way2}}
               </span>
+                <ul class="selected" v-show="ii">
+                  <li v-for="(item, index) in lis3" ref="ways2" @click="fillway2(index)">
+                    {{item}}
+                  </li>
+                </ul>
+              </div>
             </li>
           </ul>
         </form>
-        <mt-button type="danger">开始计算</mt-button>
-        <p>税费计算器仅供参考计算，实际有银行评估</p>
+        <mt-button id="bottom-btn" type="danger">开始计算</mt-button>
+        <p>税费计算器仅供参考计算，实际由银行评估</p>
       </mt-tab-container-item>
     </mt-tab-container>
   </div>
@@ -200,6 +283,10 @@
     margin: 0;
     padding: 0;
   }
+  header{
+    display: flex;
+    border-bottom: 1px solid gainsboro;
+  }
   .mint-button--default {
     color: #656b79;
     background-color: white;
@@ -208,48 +295,7 @@
   ul li .wrap{
     position: absolute;
     right: 10px;
-  }
-  ul li .wrap .selected{
-    position: relative;
-  }
-  .selected li{
-    text-align: center;
-  }
-  p{
-    width: 100%;
-    text-align: center;
-    margin: 20px auto;
-  }
-  input{
-    outline: none;
-    border: none;
-    font-size: 18px;
     text-align: right;
-  }
-  header{
-    display: flex;
-    border-bottom: 1px solid gainsboro;
-  }
-  .mint-navbar{
-    width: 90%;
-    padding-right: 40px;
-  }
-  .mint-tab-item-label{
-    font-size: 18px;
-  }
-  .mint-navbar .mint-tab-item.is-selected {
-    border-bottom: 3px solid red;
-    color: red;
-    margin-bottom: 3px;
-  }
-  ul{
-    list-style: none;
-  }
-  li .fill.select{
-    padding-right: 15px;
-    background-size: .075rem .125rem;
-    background: url("./images/download-16.png") no-repeat 100%;
-    background-size: 10px;
   }
   .page-info>li {
     padding: 10px;
@@ -259,14 +305,55 @@
     border-bottom: 1px solid grey;
     line-height: 35px;
   }
+  ul li .wrap .selected{
+    position: relative;
+  }
+  .selected li{
+    text-align: center;
+  }
+  .page-navbar input{
+    outline: none;
+    border: none;
+    font-size: 18px;
+    text-align: right;
+  }
+  .mint-navbar{
+    width: 90%;
+    padding-right: 40px;
+  }
+  .mint-navbar .mint-tab-item{
+    padding: 15px 0 0 0;
+  }
+  .mint-tab-item-label{
+    font-size: 18px;
+  }
+  li .fill.select{
+    padding-right: 15px;
+    background-size: .075rem .125rem;
+    background: url("./images/download-16.png") no-repeat 100%;
+    background-size: 10px;
+  }
+  .mint-navbar .mint-tab-item.is-selected {
+    border-bottom: 3px solid red;
+    color: red;
+    margin-bottom: 3px;
+  }
   .selected{
     display: block;
     background-color: whitesmoke;
     box-shadow: 0 0 5px grey;
     z-index: 10;
   }
+  ul{
+    list-style: none;
+  }
   #bottom-btn{
     width: 100%;
     margin-top: 50px;
+  }
+  p{
+    width: 100%;
+    text-align: center;
+    margin: 20px auto;
   }
 </style>

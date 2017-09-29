@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="findhouse">
       <mt-header title="帮我找房">
         <router-link to="/tool" slot="left">
           <mt-button icon="back"></mt-button>
@@ -48,18 +48,14 @@
 </script>
 <style>
   *{
-    margin: 0px;
-    padding: 0px;
+    margin: 0;
+    padding: 0;
   }
-  header span {
-    height: 25px;
-    font-size: 18px;
-  }
-  .mint-header{
+  .findhouse .mint-header{
     background-color: white;
     color: black;
   }
-  .icon-btn{
+  .findhouse .icon-btn{
     list-style: none;
     height: 140px;
     padding-top: 30px;
@@ -67,16 +63,16 @@
     border-bottom: 1px solid grey;
     display: flex;
   }
-  .icon-btn li{
+  .findhouse .icon-btn li{
     display: inline-block;
     flex: 1;
   }
-  .icon-btn li .my-icon-button{
+  .findhouse .icon-btn li .my-icon-button{
     display: flex;
     text-align: center;
     flex-direction: column;
   }
-  .icon-btn li img {
+  .findhouse .icon-btn li img {
     width: 80px;
     margin: 5px auto 5px auto;
     display: block;

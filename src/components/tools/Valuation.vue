@@ -1,5 +1,5 @@
 <template>
-    <div class="info">
+    <div class="Price-info">
       <mt-header title="房屋估价">
         <router-link to="/tool" slot="left">
           <mt-button icon="back"></mt-button>
@@ -43,23 +43,20 @@
   .owner-info {
     margin-top: 40px;
   }
-  header span {
-    height: 25px;
-    font-size: 18px;
-  }
-  .mint-header{
+  .Price-info .mint-header{
     background-color: white;
     color: black;
   }
   .house-info li, .owner-info li{
     padding: 10px;
     font-size: 20px;
+    display: flex;
+    justify-content: space-between;
     line-height: 30px;
     border: 1px solid lightgrey;
   }
-  li input{
-    float: right;
-    display: block;
+ .house-info li input,.owner-info li input{
+    display: flex;
     text-align: right;
     border: none;
     font-size: 15px;
@@ -78,11 +75,7 @@
     float: right;
     color: purple;
   }
-  .mint-button{
-    border-radius: 0px;
-    height: 50px;
-  }
-  .mint-button--bottom-btn {
+  .Price-info .mint-button--bottom-btn {
     color: #fff;
     background-color: purple;
     width: 100%;

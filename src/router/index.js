@@ -7,6 +7,9 @@ import VisitHouse from '../components/visithouse/VisitHouse.vue'
 import Valuation from '../components/tools/Valuation.vue'
 import Findhouse from '../components/tools/Findhouse.vue'
 import HouseLoanCalculator from '../components/tools/HouseLoanCalculator.vue'
+import TaxationCalculator from '../components/tools/TaxationCalculator.vue'
+import ToolBroker from '../components/tools/ToolBroker.vue'
+import ToolExamine from '../components/tools/ToolExamine.vue'
 import Own from '../components/our/Own.vue'
 import Login from '../components/common/login/Login.vue'
 // import NotFoundComponent from '../components/common/errorpage/NotFoundComponent.vue'
@@ -64,6 +67,18 @@ export default new Router({
     {
       path: '/HouseLoanCalculator',
       component: HouseLoanCalculator
+    },
+    {
+      path: '/TaxationCalculator',
+      component: TaxationCalculator
+    },
+    {
+      path: '/ToolBroker',
+      component: ToolBroker
+    },
+    {
+      path: '/ToolExamine',
+      component: ToolExamine
     }
   ]
 })
